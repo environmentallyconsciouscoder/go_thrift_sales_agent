@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-template",
+  "name": "sales-agent",
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
@@ -7,9 +7,10 @@
   "scripts": {},
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
-    "typescript": "5.3.3"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "sst": "^3"
+    "openai": "^4.57.1",
+    "sst": "ion"
   }
 }

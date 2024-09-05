@@ -1,7 +1,14 @@
-import { bucket } from "./storage";
+import { secret } from "./storage";
 
-export const myApi = new sst.aws.Function("MyApi", {
-  url: true,
-  link: [bucket],
-  handler: "packages/functions/src/api.handler"
+export const api = new sst.aws.ApiGatewayV2("Api", {
+  transform: {
+    route: {
+      handler: {
+        link: [secret],
+      }
+    }
+  },
+  cors: true
 });
+
+api.route("GET /ai/recommendations", "packages/functions/src/recommendations.main");
