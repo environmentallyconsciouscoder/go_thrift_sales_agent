@@ -1,4 +1,3 @@
-import { Resource } from "sst";
 import { Recommendations } from "@sales-agent/core/recommendations";
 import { Util } from "@sales-agent/core/util";
 

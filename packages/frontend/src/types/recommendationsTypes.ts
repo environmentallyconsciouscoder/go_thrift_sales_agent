@@ -1,15 +1,12 @@
-
 export interface ClothingItem {
   type: string;
   brand: string;
   color: string;
-  size?: string; // Making size optional
+  size?: string;
   price: string;
   link: string;
 }
-
-
-  export interface RecommendationsResponse {
-    style: ClothingItem[];
-    description: string;
-  }
+export interface RecommendationsResponse {
+  style: ClothingItem[];
+  description: string;
+}

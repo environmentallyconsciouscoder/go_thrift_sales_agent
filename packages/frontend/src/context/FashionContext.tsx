@@ -1,5 +1,3 @@
-// context/FashionContext.tsx
-
 import React, { createContext, useState, ReactNode } from 'react';
 import { RecommendationsResponse } from '../types/recommendationsTypes';
 
