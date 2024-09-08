@@ -31,12 +31,15 @@ I chose the OpenAI API due to its advanced natural language processing capabilit
 The project is organised into the following structure:
 
 - **1. infra/** -- App Infrastructure
+
   The code that describes the infrastructure of your serverless app is placed in the infra/ directory of the project
 
 - **2. packages/**
+
   The Lambda function code that's run when the API is invoked is placed in the packages/functions directory of the project, the packages/core contains my business logic, and the packages/scripts are for any one-off scripts I might create.
 
 - **3. packages/frontend**
+
   This is the directory of the React Application
 
 ## Technologies Used
