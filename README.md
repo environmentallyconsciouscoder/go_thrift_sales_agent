@@ -32,11 +32,11 @@ The project is organised into the following structure:
 
 - **1. infra/** -- App Infrastructure
 
-  The code that describes the infrastructure of your serverless app is placed in the infra/ directory of the project
+  The code that describes the infrastructure of my serverless app is placed in the infra/ directory of the project
 
 - **2. packages/**
 
-  The Lambda function code that's run when the API is invoked is placed in the packages/functions directory of the project, the packages/core contains my business logic, and the packages/scripts are for any one-off scripts I might create.
+  The Lambda function code that's run when the API is invoked is placed in the packages/functions directory of the project, the packages/core contains my business logic, and the packages/scripts are for any one-off scripts.
 
 - **3. packages/frontend**
 
