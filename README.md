@@ -32,12 +32,21 @@ The project is organized into the following structure:
 
 ## Technologies Used
 
-- **React**: Front-end library for building the user interface.
-- **TypeScript**: Adds static type definitions for JavaScript.
-- **OpenAI API**: Provides advanced natural language processing capabilities.
-- **AWS Amplify**: Backend services and API management.
-- **Vite**: Fast development build tool for React.
-- **Tailwind CSS**: Utility-first CSS framework for styling.
+### Frontend
+
+- **React**
+- **TypeScript**
+- **AWS Amplify**
+- **Vite**
+- **Tailwind CSS**
+
+### Backend
+
+- **OpenAI API**
+- **AWS Lambda**
+- **AWS API Gateway**
+- **Serverless Stack**
+- **TypeScript**
 
 ## Setup and Running Locally
 
