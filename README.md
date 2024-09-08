@@ -12,27 +12,19 @@ You can view a live demo of the application here: [Live Demo](https://d273zjepdp
 
 ### OpenAI API
 
-We chose the OpenAI API due to its advanced natural language processing capabilities, which are ideal for generating personalised and human-like fashion recommendations.
+I chose the OpenAI API due to its advanced natural language processing capabilities, which are ideal for generating personalised and human-like fashion recommendations.
 
 ## Key Features
 
 ### Dashboard
 
-- **Personalized Recommendations**: Displays fashion items based on user inputs such as name, age, gender, style preference, fit, and budget.
+- **Personalised Recommendations**: Displays fashion items based on user inputs such as name, age, gender, style preference, fit, and budget.
 - **Organized Layout**: Clear presentation of recommendations, including item type, brand, color, size, price, and purchase links.
 - **User Input Form**: Collects user preferences for generating recommendations.
 - **Handling States**: Manages loading and error states effectively, providing user feedback.
 
-### Form
-
-The form collects the following user information:
-
-- **Name**: The user's name.
-- **Age Feeling**: How old the user feels.
-- **Gender**: The user's gender identity.
-- **Style Preference**: The user's preferred style.
-- **Fit**: How the user likes their clothes to fit.
-- **Budget**: The user's budget range.
+![Dashboard Screenshot](./packages/frontend/src/assets/first_page.png)
+![Dashboard Screenshot](./packages/frontend/src/assets/second_page.png)
 
 ## Project Layout
 
