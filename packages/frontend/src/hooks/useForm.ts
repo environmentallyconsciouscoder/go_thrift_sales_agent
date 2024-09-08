@@ -2,30 +2,23 @@ import { useState } from 'react';
 import { API } from 'aws-amplify';
 import { useFashionContext } from '../context/FashionContext';
 import { useNavigate } from 'react-router-dom';
+import { FormField, FormData, UseFormOptions } from '../types/formTypes';
+import { RecommendationsResponse } from '../types/recommendationsTypes';
 
-interface FormData {
-  name: string;
-  ageFeeling: string;
-  gender: string;
-  stylePreference: string;
-  fit: string;
-  budget: string;
-}
 
-interface ApiResponse {
-  result: string;
-}
+export function useForm(options: UseFormOptions = {}) {
 
-export function useFashionConsultantForm() {
-  const { setRecommendations } = useFashionContext();
-  const [formData, setFormData] = useState<FormData>({
+  const { initialFormData = {
     name: '',
     ageFeeling: '',
     gender: '',
     stylePreference: '',
     fit: '',
-    budget: '',
-  });
+    budget: ''
+  }} = options;
+
+  const { setRecommendations } = useFashionContext();
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -34,7 +27,7 @@ export function useFashionConsultantForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prevState => ({ ...prevState, [name as FormField]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,20 +36,11 @@ export function useFashionConsultantForm() {
     setError(null);
 
     try {
-      const params = new URLSearchParams({
-        gender: formData.gender,
-        name: formData.name,
-        age: formData.ageFeeling,
-        stylePreference: formData.stylePreference,
-        fitInformation: formData.fit,
-        budgetRange: formData.budget,
-      }).toString();
-
-      const response: ApiResponse = await API.get('api', `/ai/recommendations?${params}`, {});
-      const parsedResult = JSON.parse(response.result);
+      const params = new URLSearchParams(Object.entries(formData) as [string, string][]).toString();
+      const response = await API.get('api', `/ai/recommendations?${params}`, {});
+      const parsedResult: RecommendationsResponse = JSON.parse(response.result);
       setRecommendations(parsedResult);
 
-      // Redirect to dashboard
       navigate('/dashboard');
     } catch (e) {
       setError('Failed to fetch recommendations');

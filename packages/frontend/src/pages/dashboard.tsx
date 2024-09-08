@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CompanyLogo from '../assets/company_logo.webp';
 import { useFashionContext } from '../context/FashionContext';
+import Button from '../components/button/button';
 
 const Dashboard: React.FC = () => {
   const { recommendations } = useFashionContext();
@@ -86,7 +87,7 @@ const Dashboard: React.FC = () => {
               {filteredItems.map((item, index) => (
                 <tr key={index} className="border-b hover:bg-gray-50">
                   <td className="p-2">
-                    <img src={item.image || "https://via.placeholder.com/100"} alt={item.type} className="w-16 h-16 object-cover rounded"/>
+                    {/* <img src={item.image || "https://via.placeholder.com/100"} alt={item.type} className="w-16 h-16 object-cover rounded"/> */}
                   </td>
                   <td className="p-2">{item.brand}</td>
                   <td className="p-2">{item.size}</td>
@@ -98,12 +99,11 @@ const Dashboard: React.FC = () => {
         </div>
 
         <div className="mt-6">
-          <button
-            onClick={handleTryAgain}
-            className="text-white bg-[#2D2D3E] hover:bg-[#007bff] font-semibold rounded-md text-sm px-4 py-2.5"
-          >
-            Try Again
-          </button>
+          <Button
+              onClick={handleTryAgain}
+              buttonDescription={'Try Again'}
+              className="text-white bg-[#2D2D3E] hover:bg-[#007bff] font-semibold rounded-md text-sm px-4 py-2.5"
+          />
         </div>
       </div>
     </div>

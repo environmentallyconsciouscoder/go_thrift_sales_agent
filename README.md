@@ -1,75 +1,64 @@
-# Monorepo Template
+# AI Fashion Consultant Application
 
-A template to create a monorepo SST ❍ Ion project.
+## Introduction
 
-## Get started
+This project is a web application that provides personalised fashion recommendations based on user input. It utilises the OpenAI API to generate tailored fashion advice and displays these recommendations on an intuitive dashboard.
 
-1. Use this template to [create your own repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## Demo
 
-2. Clone the new repo.
+You can view a live demo of the application here: [Live Demo](https://d273zjepdp7s3q.cloudfront.net)
 
-   ```bash
-   git clone MY_APP
-   cd MY_APP
-   ```
+## API Integration Choice
 
-3. Rename the files in the project to the name of your app. 
+### OpenAI API
 
-   ```bash
-   npx replace-in-file /sales-agent/g MY_APP **/*.* --verbose
-   ```
+We chose the OpenAI API due to its advanced natural language processing capabilities, which are ideal for generating personalised and human-like fashion recommendations.
 
-4. Deploy!
+## Key Features
 
-   ```bash
-   npm install
-   npx sst deploy
-   ```
+### Dashboard
 
-6. Optionally, enable [_git push to deploy_](https://ion.sst.dev/docs/console/#autodeploy).
+- **Personalized Recommendations**: Displays fashion items based on user inputs such as name, age, gender, style preference, fit, and budget.
+- **Organized Layout**: Clear presentation of recommendations, including item type, brand, color, size, price, and purchase links.
+- **User Input Form**: Collects user preferences for generating recommendations.
+- **Handling States**: Manages loading and error states effectively, providing user feedback.
 
-## Usage
+### Form
 
-This template uses [npm Workspaces](https://docs.npmjs.com/cli/v8/using-npm/workspaces). It has 3 packages to start with and you can add more it.
+The form collects the following user information:
 
-1. `core/`
+- **Name**: The user's name.
+- **Age Feeling**: How old the user feels.
+- **Gender**: The user's gender identity.
+- **Style Preference**: The user's preferred style.
+- **Fit**: How the user likes their clothes to fit.
+- **Budget**: The user's budget range.
 
-   This is for any shared code. It's defined as modules. For example, there's the `Example` module.
+## Project Layout
 
-   ```ts
-   export module Example {
-     export function hello() {
-       return "Hello, world!";
-     }
-   }
-   ```
+The project is organized into the following structure:
 
-   That you can use across other packages using.
+## Technologies Used
 
-   ```ts
-   import { Example } from "@aws-monorepo/core/example";
+- **React**: Front-end library for building the user interface.
+- **TypeScript**: Adds static type definitions for JavaScript.
+- **OpenAI API**: Provides advanced natural language processing capabilities.
+- **AWS Amplify**: Backend services and API management.
+- **Vite**: Fast development build tool for React.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
 
-   Example.hello();
-   ```
+## Setup and Running Locally
 
-2. `functions/`
+### Prerequisites
 
-   This is for your Lambda functions and it uses the `core` package as a local dependency.
+- Node.js (v14 or later)
+- npm or yarn
 
-3. `scripts/`
+### Installation
 
-    This is for any scripts that you can run on your SST app using the `sst shell` CLI and [`tsx`](https://www.npmjs.com/package/tsx). For example, you can run the example script using:
+1. **Clone the Repository**:
 
    ```bash
-   npm run shell src/example.ts
+   git clone <repository-url>
+   cd <repository-directory>
    ```
-
-### Infrastructure
-
-The `infra/` directory allows you to logically split the infrastructure of your app into separate files. This can be helpful as your app grows.
-
-In the template, we have an `api.ts`, and `storage.ts`. These export the created resources. And are imported in the `sst.config.ts`.
-
----
-
-Join the SST community over on [Discord](https://discord.gg/sst) and follow us on [Twitter](https://twitter.com/SST_dev).
