@@ -19,7 +19,7 @@ I chose the OpenAI API due to its advanced natural language processing capabilit
 ### Dashboard
 
 - **Personalised Recommendations**: Displays fashion items based on user inputs such as name, age, gender, style preference, fit, and budget.
-- **Organized Layout**: Clear presentation of recommendations, including item type, brand, color, size, price, and purchase links.
+- **Organised Layout**: Clear presentation of recommendations, including item type, brand, color, size, price, and purchase links.
 - **User Input Form**: Collects user preferences for generating recommendations.
 - **Handling States**: Manages loading and error states effectively, providing user feedback.
 
@@ -28,7 +28,16 @@ I chose the OpenAI API due to its advanced natural language processing capabilit
 
 ## Project Layout
 
-The project is organized into the following structure:
+The project is organised into the following structure:
+
+- **1. infra/** -- App Infrastructure
+  The code that describes the infrastructure of your serverless app is placed in the infra/ directory of the project
+
+- **2. packages/**
+  The Lambda function code that's run when the API is invoked is placed in the packages/functions directory of the project, the packages/core contains my business logic, and the packages/scripts are for any one-off scripts I might create.
+
+- **3. packages/frontend**
+  This is the directory of the React Application
 
 ## Technologies Used
 
