@@ -4,10 +4,6 @@
 
 This project is a web application that provides personalised fashion recommendations based on user input. It utilises the OpenAI API to generate tailored fashion advice and displays these recommendations on an intuitive dashboard.
 
-## Demo
-
-You can view a live demo of the application here: [Live Demo](https://d273zjepdp7s3q.cloudfront.net)
-
 ## API Integration Choice
 
 ### OpenAI API
